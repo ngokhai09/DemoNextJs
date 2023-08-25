@@ -9,7 +9,7 @@ export default function HouseTypeDropdown() {
 
     return (
         <>
-           <Dropdown arrowIcon={false} label={<>
+           <Dropdown inline arrowIcon={false} label={<>
                <img src="https://anphuocland.com/assets/icons/home.svg" alt="" className="h-4 w-4"/>
                <span className="grow text-left text-black pl-2 w-11/12">Loại nhà đất</span>
            </>}>

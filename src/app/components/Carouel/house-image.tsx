@@ -1,7 +1,9 @@
 "use client"
 import React, {useState} from "react";
 
-export default function HouseImage({img}) {
+
+export default function HouseImage(props:{img:[]}) {
+    const {img} = props;
     const [currentIndex, setCurrentIndex] = useState(0)
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
@@ -13,7 +15,7 @@ export default function HouseImage({img}) {
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex)
     }
-    const setSlide = (index) => {
+    const setSlide = (index: number) => {
         setCurrentIndex(index);
     }
     return (
@@ -35,7 +37,7 @@ export default function HouseImage({img}) {
                 {/*TODO*/}
                 <div className={"grid grid-cols-6 m-1"}>
                     {img && img.map((item: {}, index: number) => (
-                        <div className={"cursor-pointer m-1"} onClick={() => {
+                        <div key={index} className={"cursor-pointer m-1"} onClick={() => {
                             setCurrentIndex(index)
                         }}>
                             <img className="object-cover h-20 w-full"

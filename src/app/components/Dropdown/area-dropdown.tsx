@@ -4,7 +4,7 @@ import {Dropdown} from "flowbite-react";
 
 export default function AreaDropdown(){
     return(
-        <Dropdown label={"Diện tích"} arrowIcon={false}>
+        <Dropdown inline label={"Diện tích"} arrowIcon={false}>
             <main  className="bg-white w-80 h-auto shadow rounded-lg space-y-2">
                 <section 
                          className="px-4 pt-4 pb-2 space-y-2 border-b border-gray-200 ng-star-inserted">

@@ -1,8 +1,80 @@
 
 import React from "react";
+// @ts-ignore
 import Link from "next/link";
+export type Items = {
+    id: string,
+    "title": string,
+    "description": string,
+    "specificAddress": string,
+    "provinceCode": number,
+    "provinceName": string,
+    "districtCode": number,
+    "districtName": string,
+    "communeCode": number,
+    "communeName": string,
+    "thumbnailUrl": string,
+    "propertySourceCode": number,
+    "propertySource": string,
+    "propertySourceString": string,
+    "transactionTypeCode": string,
+    "propertyTypeCode": string,
+    "propertyType": {
+        "title": string,
+        "code": string
+    },
+    "propertyTypeString": string,
+    "totalArea": number,
+    "totalPrice": number,
+    "currency": string,
+    "totalRooms": number,
+    "totalRestrooms": number,
+    "totalFloors": number,
+    "houseDirectionCode": number,
+    "houseDirectionType": string,
+    "houseDirectionString": string,
+    "balconyDirectionCode": number,
+    "balconyDirectionType": string,
+    "balconyDirectionString": string,
+    "facadeLength": number,
+    "wayInLength": number,
+    "interior": string,
+    "positioning": string,
+    "statusCode": string,
+    "hasAttachment": boolean,
+    "createdByUserId": string,
+    "createdOnDate": string,
+    "lastModifiedOnDate": string,
+    "realImageListUrl": string,
+    "virtualImageListUrl": [],
+    "documentsImageListUrl": null,
+    "view3DImageListUrl": null,
+    "videoListUrl": null,
+    "ccdvListUrl": null,
+    "ownerPhone": null,
+    "propertyNo": string,
+    "qrCode": null,
+    "ownerName": null,
+    "village": null,
+    "currentUserConnectStatus": null,
+    "unitPrice": null,
+    "priceDisplayTypeCode": string,
+    "priceDisplayType": {
+        "title": string,
+        "code": string
+    },
+    "priceDisplayTypeString": string,
+    "user": null,
+    "hasSendZalo": boolean,
+    "numberOfProperty": number,
+    "lotNumber": null,
+    "mapNumber": null,
+    "allowTransaction": boolean,
+    "lastPropertyTransaction": null
+}
 
-export default function House({item}) {
+export default function House(props:{item:Items}) {
+    const {item} = props
     const getTime = (day: any) => {
         const date = new Date(Date.now() - Date.parse(day));
         return date.getDate() - 1;
@@ -10,12 +82,12 @@ export default function House({item}) {
     return (
         <Link href={`/property/${item.id}`}>
             <div
-                className="bg-white rounded-md hover:shadow-md duration-400 w-full cursor-pointer ng-star-inserted">
+                className="bg-white border-2 border-gray-200 rounded-md hover:shadow-md duration-400 w-full cursor-pointer ">
                 <div className="relative">
                     <div className="flex flex-row items-center gap-1 absolute bottom-2 right-2"><img
                         src="https://anphuocland.com/assets/icons/home/whiteimage.svg" alt=""
                         className="w-[18px]"/><span
-                        className="text-white font-semibold"> 1 </span></div>
+                        className="text-white font-semibold"> {item.virtualImageListUrl.length} </span></div>
                     <img className="h-[150px] w-full max-w-full object-cover rounded-t-sm"
                          src={item.thumbnailUrl}/>
 

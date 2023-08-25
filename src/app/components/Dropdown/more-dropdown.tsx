@@ -13,7 +13,7 @@ export default function MoreDropDown(){
         })
     }, [])
     return(
-        <Dropdown label={"Lọc thêm"} arrowIcon={false}>
+        <Dropdown inline label={"Lọc thêm"} arrowIcon={false}>
             <main  className="bg-white w-80 h-auto shadow rounded-lg space-y-2">
                 <section  className="px-4 pt-4">
                     <div  className="mb-6">
@@ -23,7 +23,7 @@ export default function MoreDropDown(){
                         </div>
                         <div  className="flex flex-wrap gap-2">
                             {source && source.map((item:any)=>(
-                                <button
+                                <button key={item.id}
                                     className="rounded-3xl py-2 px-4 bg-gray-100 ng-star-inserted"> {item.title}
                                 </button>
                             ))}

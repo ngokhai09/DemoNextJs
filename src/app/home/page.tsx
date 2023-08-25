@@ -1,17 +1,18 @@
-
 import Search from "@/app/components/search";
-import React, {useEffect, useState} from "react";
-import DefaultCarousel from "@/app/components/Carouel/carosel";
+import React, {Profiler} from "react";
 import ListHouse from "@/app/components/listHouse";
-import {GetStaticProps} from "next";
+import {callback} from "@/app/layout";
+
 type Repo = {
     name: string
     stargazers_count: number
 }
 
 
+
 export default function Home() {
-    let t1, t2;
+
+
     return (
         <main>
 
@@ -20,15 +21,16 @@ export default function Home() {
 
                     <div className="absolute z-10 w-full h-0 top-[calc(50%-1.125rem)]">
 
-                        <Search></Search>
+                        <Profiler id={"Search Bar"} onRender={callback}>
+                            <Search></Search>
+                        </Profiler>
                     </div>
                 </div>
             </section>
             <section className={"pt-[600px]"}>
-                {/*{t1 = performance.now()}*/}
-                <ListHouse/>
-                {/*{t2 = performance.now()}*/}
-                {/*{( " - "+ t2 + " - " + t1) + "ms"}*/}
+                 {/*@ts-ignore */}
+                    <ListHouse/>
+
             </section>
         </main>
     )

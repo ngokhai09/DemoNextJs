@@ -55,8 +55,8 @@ export default function Search() {
                     </div>
                     <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center items-end gap-4 mt-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-                            <p
-                                className="rounded w-full h-8 text-white border-2 border-rose-500 flex justify-between items-center px-3">
+                            <button
+                                className="rounded w-full h-8 text-white border border-white flex justify-between items-center px-3">
                                 <AddressDropDown/>
 
                                 <span className="anticon !text-xs text-gray-400 anticon-down"><svg
@@ -65,7 +65,7 @@ export default function Search() {
                                     data-icon="down" aria-hidden="true"><path
                                     d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg>
                             </span>
-                            </p>
+                            </button>
                             <button
                                 className="ant-dropdown-trigger rounded w-full h-8 text-white border border-white flex justify-between items-center px-3">
                                 <PriceDropdown></PriceDropdown>
@@ -78,7 +78,8 @@ export default function Search() {
                             </button>
                             <button
                                 className="ant-dropdown-trigger rounded w-full h-8 text-white border border-white flex justify-between items-center px-3">
-                                <AreaDropdown/><span
+                                <AreaDropdown/>
+                                <span
                                 className="anticon !text-xs text-gray-400 anticon-down"><svg
                                 viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em"
                                 data-icon="down" aria-hidden="true"><path
@@ -86,7 +87,8 @@ export default function Search() {
                             </button>
                             <button
                                 className="ant-dropdown-trigger rounded w-full h-8 text-white border border-white flex justify-between items-center px-3">
-                                <MoreDropDown/><span
+                                <MoreDropDown/>
+                                <span
                                 className="anticon !text-xs text-gray-400 anticon-down"><svg
                                 viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em"
                                 data-icon="down" aria-hidden="true"><path

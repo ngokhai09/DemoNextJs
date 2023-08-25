@@ -1,8 +1,9 @@
 
-import React, {useEffect, useState} from "react";
+import React from "react";
 // @ts-ignore
 import axios from "axios";
 import DropDownMenu from "@/app/components/Dropdown/dropdown";
+// @ts-ignore
 import Link from "next/link";
 
 export default async function Header() {
@@ -10,6 +11,7 @@ export default async function Header() {
     const homeType = data.data.data.content;
 
     return (
+
         <div className={"flex justify-between items-center h-20 pl-8 pr-4 text-black w-screen"}>
             <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 
@@ -24,8 +26,8 @@ export default async function Header() {
                 </Link>
                 <ul className={"text-sm font-semibold hidden xl:flex gap-x-8 ant-menu ant-menu-root ant-menu-light ant-menu-horizontal"}>
 
-                    <DropDownMenu title={"Nhà đất bán"} content={"Bán"} children={homeType}/>
-                    <DropDownMenu title={"Nhà đất cho thuê"} content={"Cho thuê"} children={homeType}/>
+                    <DropDownMenu title={"Nhà đất bán"} content={"Bán"} children={homeType} isDropdown={true}/>
+                    <DropDownMenu title={"Nhà đất cho thuê"} content={"Cho thuê"} children={homeType} isDropdown={true}/>
                 </ul>
             </div>
             <div className={"flex items-center justify-end h-3/5 text-sm font-semibold gap-4"}>

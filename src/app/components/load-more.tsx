@@ -2,7 +2,8 @@
 import {useState} from "react";
 import House from "@/app/components/house";
 
-export default function LoadMore({house}){
+export default function LoadMore(props :{house: any[]}){
+    const {house} = props;
     const [isShow, setShow] = useState(false);
     const loadMore = async ()  => {
 
@@ -19,8 +20,8 @@ export default function LoadMore({house}){
                 </div>
             </>): (
                 <>
-                {house.map((item)=>(
-                    <House item={item}/>
+                {house.map((item: any)=>(
+                    <House key={item.id} item={item}/>
                     ))}
                     <div></div>
                     <div className="flex justify-center p-5">

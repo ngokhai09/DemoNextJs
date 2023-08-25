@@ -9,11 +9,11 @@ export default function PriceDropdown() {
     const [value, setValue] = useState(0);
     const addCommas = (num: any) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     const removeNonNumeric = (num: any) => num.toString().replace(/[^0-9]/g, "");
-    const changeValue = (e)=>{
+    const changeValue = (e:any)=>{
         setValue(addCommas(removeNonNumeric(e.target.value)));
     }
     return (
-        <Dropdown label={"Mức giá"} className={"w-70"} arrowIcon={false}>
+        <Dropdown inline label={"Mức giá"} className={"w-70"} arrowIcon={false}>
             <section
                 className="px-4 pt-4 pb-2 space-y-2 border-b border-gray-200 ng-star-inserted">
                 <div className="h-9 flex justify-between items-center"><input value={from}

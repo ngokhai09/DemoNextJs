@@ -1,21 +1,14 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import House from "@/app/components/house";
+import House, {Items} from "@/app/components/house";
 // @ts-ignore
 import axios from "axios";
 
-export default function SuggestHouse(){
+export default function SuggestHouse(props: { forYou: [] }) {
+    const {forYou} = props;
     const [showIndex, setShowIndex] = useState(0)
-    const [forYou, setForYou] = useState([]);
-    const [showArray, setShowArray] = useState([]);
-    useEffect(() => {
-        axios.get("https://anphuocland.com:7100/api/v1/property?filter=%7B%22transactionTypeCode%22:%22SALE%22,%22isHome%22:true%7D").then((data: any) => {
-            setForYou(data.data.data.content)
-        })
-    }, [])
-    useEffect(() => {
-        setShowArray([...forYou].splice(0, 3))
-    }, [forYou])
+    const [showArray, setShowArray] = useState([...forYou].splice(0, 3));
+
     const nextHouse = () => {
         let show = [...showArray];
         show.shift();
@@ -44,7 +37,7 @@ export default function SuggestHouse(){
 
         setShowArray(show)
     }
-    return(
+    return (
         <>
             <div className={"md-5"}>
                 <div className={"mt-5"}>
@@ -57,8 +50,8 @@ export default function SuggestHouse(){
                         </div>
                     </div>
                     <div className={"columns-3"}>
-                        {forYou && showArray.map((item: any) => (
-                            <House item={item}/>
+                        {forYou && showArray.map((item: Items) => (
+                            <House key={item.id} item={item}/>
                         ))}
                     </div>
                 </div>

@@ -13,10 +13,10 @@ export default function AddressDropDown() {
     const [ward, setWard] = useState("");
     const [address, setAddress] = useState("Toàn quốc")
     return (
-        <Dropdown arrowIcon={false} label={<>
-            <span className="truncate mr-3">{address}</span>
+        <Dropdown inline arrowIcon={false} label={<>
+            <span className="truncate mr-3 border-0">{address}</span>
 
-        </>} className={"w-2/6"}>
+        </>} className={"w-2/6 focus:border-0"}>
             <DropdownHeader>
                 Khu vực
             </DropdownHeader>
